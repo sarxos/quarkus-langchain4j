@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.quarkiverse.langchain4j</groupId>
-        <artifactId>quarkus-langchain4j-pinecone-parent</artifactId>
+        <artifactId>quarkus-langchain4j-milvus-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
     <artifactId>quarkus-langchain4j-milvus-deployment</artifactId>
@@ -33,6 +33,10 @@
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-milvus</artifactId>
             <version>${langchain4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-devservices-deployment</artifactId>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>

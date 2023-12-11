@@ -22,7 +22,7 @@ import io.quarkus.deployment.builditem.FeatureBuildItem;
 public class MilvusProcessor {
 
     public static final DotName MILVUS_EMBEDDING_STORE = DotName.createSimple(MilvusEmbeddingStore.class);
-    private static final String FEATURE = "langchain4j-milvus";
+    public static final String FEATURE = "langchain4j-milvus";
 
     @BuildStep
     FeatureBuildItem feature() {
