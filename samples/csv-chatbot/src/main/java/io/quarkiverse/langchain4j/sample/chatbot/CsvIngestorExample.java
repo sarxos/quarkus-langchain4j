@@ -2,6 +2,7 @@ package io.quarkiverse.langchain4j.sample.chatbot;
 
 import static dev.langchain4j.data.document.splitter.DocumentSplitters.recursive;
 
+import dev.langchain4j.data.segment.TextSegment;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,8 +23,8 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.Metadata;
 import dev.langchain4j.model.embedding.EmbeddingModel;
+import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.EmbeddingStoreIngestor;
-import io.quarkiverse.langchain4j.redis.RedisEmbeddingStore;
 import io.quarkus.runtime.StartupEvent;
 
 @ApplicationScoped
@@ -34,7 +35,7 @@ public class CsvIngestorExample {
      * The bean is provided by the quarkus-langchain4j-redis extension.
      */
     @Inject
-    RedisEmbeddingStore store;
+    EmbeddingStore<TextSegment> store;
 
     /**
      * The embedding model (how the vector of a document is computed).
